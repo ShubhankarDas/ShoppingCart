@@ -1,0 +1,40 @@
+.thumbnail img{
+    max-height: 150px;
+    }
+
+.price{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.thumbnail .description{
+    color: #777777;
+}
+
+.logo{
+    max-height: 30px;
+}
+.product-row{
+  padding-left: 1%;
+}
+
+.error{
+  background-color: #f1f1f5;
+  height: 70vh;
+}
+.error img{
+  max-height: none;
+}
+.msg {
+  left:35%;
+    position: fixed;
+    width: 30%;
+    text-align: center;
+    display: block;
+    bottom: 0;
+}
+.side-static{
+  position: fixed;
+  width: 20%;
+  right:9%;
+}
