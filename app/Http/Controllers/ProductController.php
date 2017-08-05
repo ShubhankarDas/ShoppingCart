@@ -6,6 +6,7 @@ use App\Cart;
 use App\Product;
 use Illuminate\Http\Request;
 use Session;
+use Auth;
 
 class ProductController extends Controller
 {
@@ -50,9 +51,13 @@ class ProductController extends Controller
       if(!Session::has('cart')){
         return view('shop.shopping-cart');
       }
-      $oldCart = Session::get('cart');
-      $cart = new Cart($oldCart);
-      $total = $cart->totalPrice;
-      return view('shop.checkout',['total'=> $total]);
+      if(Auth::check()){
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        $total = $cart->totalPrice;
+        return view('shop.checkout',['total'=> $total]);
+      }
+      Session::put('checkout',true);
+      return redirect()->route('user.signin');
     }
 }

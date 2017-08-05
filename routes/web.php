@@ -43,6 +43,10 @@ Route::group(['prefix'=>'user'],function(){
       'uses' => 'UserController@postSignin',
       'as' => 'user.signin'
     ]);
+    Route::post('/update',[
+      'uses' => 'UserController@update',
+      'as' => 'user.update'
+    ]);
   });
 
   Route::group(['middleware'=>'auth'],function(){

@@ -63,10 +63,6 @@ My Cart
             <p class="pull-right">Rs {{ $totalPrice }}</p>
           </div>
       </div>
-      <hr>
-      <div class="clearfix">
-        <p><a href="{{route('checkout')}}" class="btn btn-primary btn-block" role="button">Checkout</a></p>
-      </div>
       </div>
     </div>
   @else

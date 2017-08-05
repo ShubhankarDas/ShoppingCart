@@ -31,7 +31,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"
           role="button" aria-haspopup="true" aria-expanded="false">
-         <i class="fa fa-user" aria-hidden="true"></i> User Account<span class="caret"></span></a>
+         <i class="fa fa-user" aria-hidden="true"></i> {{Auth::check() ? Auth::user()->name : 'User Management'}} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             @if(Auth::check())
               <li><a href="{{route('user.profile')}}">Profile</a></li>
